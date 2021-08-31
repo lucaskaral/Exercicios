@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title></title>
+        <script language="javascript" type="text/javascript">
+            class Produto {
+                codigo;
+                nome;
+                preco;
+                constructor(cod, name, price) {
+                    this.codigo = cod;
+                    this.nome = name;
+                    this.preco = price;
+                };
+
+            };
+
+            class Repositorio {
+                constructor() {
+                    this.listaProdutos = [];
+                }
+                
+                addProduto(produto) {
+                    if (this.listaProdutos == undefined) return;
+                    this.listaProdutos.push(produto);
+                }
+
+                deleteProduto(produto) {
+                    if (this.listaProdutos == undefined) return;
+                    this.listaProdutos.pop(produto);
+                }
+
+                function buscarPorId(id) {
+    for(let prod of listaProdutos){
+        if(prod.id == id) {
+            return prod;
+        }
+    }    
+}
+
+                showProdutos() {
+                    if (this.listaProdutos == undefined) {
+                        console.log("Nao ha produtos cadastrados");
+                        return;
+                    }
+                    this.listaProdutos.forEach(element => {
+                        console.log("Codigo Produto: " + element.codigo);
+                        console.log("Nome Produto  : " + element.nome);
+                        console.log("Preço Produto : " + element.preco);
+                        console.log("...................................");
+                    });
+                    console.log("================================================")
+                }
+            }
+ 
+        </script>
+    </head>
+    <body onload="document_OnLoad();">
+
+    </body>
+</html>
